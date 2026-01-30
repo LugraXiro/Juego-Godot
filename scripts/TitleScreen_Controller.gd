@@ -18,9 +18,11 @@ extends Control
 @onready var btn_music: BaseButton = $OptionsPopup/BtnMusic
 @onready var btn_salir: BaseButton = $OptionsPopup/BtnSalir
 
-# Audio de UI
+# Audio de SFX
 @onready var ui_hover_player: AudioStreamPlayer = $UiHoverPlayer
 
+# Audio de Musica
+@onready var music_player: AudioStreamPlayer = $MusicPlayer
 # ====== RUTAS DE LOS ICONOS ======
 const ICO_MUSIC_ON := "res://assets/sprites/UI_images/UI_TitleScreenOptions_ICO_Musica_Activado.png"
 const ICO_MUSIC_OFF := "res://assets/sprites/UI_images/UI_TitleScreenOptions_ICO_Musica_Desactivado.png"
@@ -58,6 +60,8 @@ func _ready() -> void:
 	_connect_hover(btn_salir)
 	
 	sfx_on = true
+	music_player.play()
+	music_player.finished.connect(func(): music_player.play())
 	_apply_audio_states()
 	
 	# Cargar configuración guardada (si existe)

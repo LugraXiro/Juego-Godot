@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://cuws2qnecrqp"]
+[gd_scene load_steps=25 format=3 uid="uid://cuws2qnecrqp"]
 
 [ext_resource type="Script" uid="uid://dta87o4a5jbvf" path="res://scripts/TitleScreen_Controller.gd" id="1_5aw1p"]
 [ext_resource type="Texture2D" uid="uid://d216ub1rhsbv" path="res://assets/sprites/UI_images/UI_TitleScreen_BG_Main.PNG" id="1_cl1u1"]
@@ -23,6 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://nbykwplve7y0" path="res://assets/sprites/UI_images/UI_TitleScreenOptions_BTN_Salir_Hover.png" id="20_yltpr"]
 [ext_resource type="Texture2D" uid="uid://t4aah66jr0qu" path="res://assets/sprites/UI_images/UI_TitleScreenOptions_BG_Marco.PNG" id="21_r1exu"]
 [ext_resource type="AudioStream" uid="uid://c8j2wwoksweou" path="res://assets/audio/SFX/ui-interface-sound2.wav" id="23_tkdi7"]
+[ext_resource type="AudioStream" uid="uid://dm3m3k0hpa3br" path="res://assets/audio/MUS/informa-playstation-jungle-160752.mp3" id="24_t6b13"]
 
 [node name="SCN_MainMenu" type="Control"]
 layout_mode = 3
@@ -174,6 +175,11 @@ stretch_mode = 5
 [node name="UIHoverPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("23_tkdi7")
 bus = &"SFX"
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("24_t6b13")
+volume_db = -20.0
+bus = &"Music"
 
 [connection signal="pressed" from="BtnAjustes" to="." method="_on_ajustes_pressed"]
 [connection signal="pressed" from="OptionsPopup/BtnSfx" to="." method="_on_toggle_sfx"]
