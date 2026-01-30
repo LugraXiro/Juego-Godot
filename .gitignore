@@ -1,0 +1,23 @@
+# Godot 4+ specific ignores
+.godot/
+/android/
+
+
+# Imported assets (Godot generates .import metadata sometimes)
+*.import
+
+# Exported builds
+/export/
+/exports/
+/build/
+/builds/
+
+# Logs / temp
+*.log
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp

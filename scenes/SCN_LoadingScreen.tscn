@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://c2xxt0wnr6t"]
+
+[ext_resource type="Texture2D" uid="uid://bm4pq77x18aee" path="res://assets/sprites/UI_images/UI_LoadingScreen_BG_Main.PNG" id="1_4pdrs"]
+[ext_resource type="Script" uid="uid://bwvtf3pgmssnd" path="res://scripts/LoadingScreen_Controller.gd" id="1_ca8dx"]
+[ext_resource type="Texture2D" uid="uid://ceilhq63fj8nh" path="res://assets/sprites/UI_images/UI_LoadingScreen_BAR_Progress_01.PNG" id="3_qf7q4"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_8y7uy"]
+blend_mode = 1
+particles_animation = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[node name="LoadingScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1925.0
+offset_bottom = 1083.0
+script = ExtResource("1_ca8dx")
+
+[node name="Background" type="TextureRect" parent="."]
+material = SubResource("CanvasItemMaterial_8y7uy")
+layout_mode = 0
+offset_left = -8.0
+offset_top = -22.0
+offset_right = 1934.0
+offset_bottom = 1198.0
+texture = ExtResource("1_4pdrs")
+
+[node name="LoadingBar" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 94.0
+offset_top = 203.0
+offset_right = 1895.0
+offset_bottom = 1161.0
+texture = ExtResource("3_qf7q4")
+stretch_mode = 3
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.6
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

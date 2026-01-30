@@ -1,0 +1,64 @@
+[gd_scene load_steps=9 format=3 uid="uid://cuws2qnecrqp"]
+
+[ext_resource type="Texture2D" uid="uid://d216ub1rhsbv" path="res://assets/sprites/UI_images/UI_TitleScreen_BG_Main.PNG" id="1_cl1u1"]
+[ext_resource type="Texture2D" uid="uid://bmybbajeo01xo" path="res://assets/sprites/UI_images/UI_TitleScreen_BTN_Play_Active.PNG" id="2_tve6h"]
+[ext_resource type="Texture2D" uid="uid://hljpcgyxsjcd" path="res://assets/sprites/UI_images/UI_TitleScreen_BTN_Options_Active.PNG" id="3_fn2rx"]
+[ext_resource type="Texture2D" uid="uid://bil07vf6am3u8" path="res://assets/sprites/UI_images/UI_TitleScreen_BTN_Options_Pressed.PNG" id="4_fn2rx"]
+[ext_resource type="Texture2D" uid="uid://bpbampotfg5h" path="res://assets/sprites/UI_images/UI_TitleScreen_ICO_Titulo.png" id="4_j4tmi"]
+[ext_resource type="Texture2D" uid="uid://bdc808fm25yf0" path="res://assets/sprites/UI_images/UI_TitleScreen_BTN_Play_Pressed.PNG" id="4_y66pl"]
+[ext_resource type="Texture2D" uid="uid://7yhen74ibwq5" path="res://assets/sprites/UI_images/UI_TitleScreen_BTN_Play_Hover.PNG" id="5_hwqn1"]
+[ext_resource type="Texture2D" uid="uid://bhfh4npgdst7x" path="res://assets/sprites/UI_images/UI_TitleScreen_BTN_Options_Hover.PNG" id="5_j4tmi"]
+
+[node name="SCN_MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1542.0
+offset_bottom = 1031.0
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_top = -78.0
+offset_right = 2014.0
+offset_bottom = 1212.0
+texture = ExtResource("1_cl1u1")
+stretch_mode = 4
+
+[node name="UI" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 482.0
+offset_right = 793.0
+offset_bottom = 949.0
+
+[node name="Title" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 25.0
+offset_top = -29.0
+offset_right = 805.0
+offset_bottom = 486.0
+texture = ExtResource("4_j4tmi")
+expand_mode = 1
+
+[node name="BtnJugar" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 279.0
+offset_top = 630.0
+offset_right = 897.0
+offset_bottom = 843.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("2_tve6h")
+texture_pressed = ExtResource("4_y66pl")
+texture_hover = ExtResource("5_hwqn1")
+stretch_mode = 4
+
+[node name="BtnAjustes" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 279.0
+offset_top = 751.0
+offset_right = 887.0
+offset_bottom = 964.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("3_fn2rx")
+texture_pressed = ExtResource("4_fn2rx")
+texture_hover = ExtResource("5_j4tmi")
+stretch_mode = 4
