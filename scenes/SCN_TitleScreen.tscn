@@ -1,19 +1,34 @@
-[gd_scene load_steps=9 format=3 uid="uid://cuws2qnecrqp"]
+[gd_scene load_steps=23 format=3 uid="uid://cuws2qnecrqp"]
 
+[ext_resource type="Script" uid="uid://dta87o4a5jbvf" path="res://scripts/TitleScreen_Controller.gd" id="1_5aw1p"]
 [ext_resource type="Texture2D" uid="uid://d216ub1rhsbv" path="res://assets/sprites/UI_images/UI_TitleScreen_BG_Main.PNG" id="1_cl1u1"]
+[ext_resource type="Texture2D" uid="uid://b0rohxsksehil" path="res://assets/sprites/UI_images/UI_TitleScreen_ICO_Titulo_2.png" id="2_8rfqe"]
 [ext_resource type="Texture2D" uid="uid://bmybbajeo01xo" path="res://assets/sprites/UI_images/UI_TitleScreen_BTN_Play_Active.PNG" id="2_tve6h"]
 [ext_resource type="Texture2D" uid="uid://hljpcgyxsjcd" path="res://assets/sprites/UI_images/UI_TitleScreen_BTN_Options_Active.PNG" id="3_fn2rx"]
 [ext_resource type="Texture2D" uid="uid://bil07vf6am3u8" path="res://assets/sprites/UI_images/UI_TitleScreen_BTN_Options_Pressed.PNG" id="4_fn2rx"]
-[ext_resource type="Texture2D" uid="uid://bpbampotfg5h" path="res://assets/sprites/UI_images/UI_TitleScreen_ICO_Titulo.png" id="4_j4tmi"]
 [ext_resource type="Texture2D" uid="uid://bdc808fm25yf0" path="res://assets/sprites/UI_images/UI_TitleScreen_BTN_Play_Pressed.PNG" id="4_y66pl"]
 [ext_resource type="Texture2D" uid="uid://7yhen74ibwq5" path="res://assets/sprites/UI_images/UI_TitleScreen_BTN_Play_Hover.PNG" id="5_hwqn1"]
 [ext_resource type="Texture2D" uid="uid://bhfh4npgdst7x" path="res://assets/sprites/UI_images/UI_TitleScreen_BTN_Options_Hover.PNG" id="5_j4tmi"]
+[ext_resource type="Texture2D" uid="uid://cp22aavnu2of0" path="res://assets/sprites/UI_images/UI_TitleScreenOptions_BG_Tablero.PNG" id="9_5aw1p"]
+[ext_resource type="Texture2D" uid="uid://cn60dqopljpse" path="res://assets/sprites/UI_images/UI_TitleScreenOptions_ICO_Musica_Activado.png" id="10_tkdi7"]
+[ext_resource type="Texture2D" uid="uid://cr70niu058qdk" path="res://assets/sprites/UI_images/UI_TitleScreenOptions_ICO_Sonido_Activado.png" id="11_t6b13"]
+[ext_resource type="Texture2D" uid="uid://o4kab21rxu5a" path="res://assets/sprites/UI_images/UI_TitleScreenOptions_BTN_Sonido_Active.png" id="12_q5hfb"]
+[ext_resource type="Texture2D" uid="uid://byoynnhtfybjm" path="res://assets/sprites/UI_images/UI_TitleScreenOptions_BTN_Sonido_Pressed.png" id="13_lvf8r"]
+[ext_resource type="Texture2D" uid="uid://bj1klf304hohj" path="res://assets/sprites/UI_images/UI_TitleScreenOptions_BTN_Sonido_Hover.png" id="14_5do2b"]
+[ext_resource type="Texture2D" uid="uid://bg368r8ew15tw" path="res://assets/sprites/UI_images/UI_TitleScreenOptions_BTN_Musica_Active.png" id="15_u4mrs"]
+[ext_resource type="Texture2D" uid="uid://cs4bxoydp2838" path="res://assets/sprites/UI_images/UI_TitleScreenOptions_BTN_Musica_Pressed.png" id="16_v6unh"]
+[ext_resource type="Texture2D" uid="uid://b7yehwy8e6fen" path="res://assets/sprites/UI_images/UI_TitleScreenOptions_BTN_Musica_Hover.png" id="17_vwxxi"]
+[ext_resource type="Texture2D" uid="uid://ct52ugroi016b" path="res://assets/sprites/UI_images/UI_TitleScreenOptions_BTN_Salir_Active.png" id="18_tgusl"]
+[ext_resource type="Texture2D" uid="uid://rt5r7e0spjc5" path="res://assets/sprites/UI_images/UI_TitleScreenOptions_BTN_Salir_Pressed.png" id="19_cym8w"]
+[ext_resource type="Texture2D" uid="uid://nbykwplve7y0" path="res://assets/sprites/UI_images/UI_TitleScreenOptions_BTN_Salir_Hover.png" id="20_yltpr"]
+[ext_resource type="Texture2D" uid="uid://t4aah66jr0qu" path="res://assets/sprites/UI_images/UI_TitleScreenOptions_BG_Marco.PNG" id="21_r1exu"]
 
 [node name="SCN_MainMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1542.0
 offset_bottom = 1031.0
+script = ExtResource("1_5aw1p")
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 0
@@ -36,7 +51,7 @@ offset_left = 25.0
 offset_top = -29.0
 offset_right = 805.0
 offset_bottom = 486.0
-texture = ExtResource("4_j4tmi")
+texture = ExtResource("2_8rfqe")
 expand_mode = 1
 
 [node name="BtnJugar" type="TextureButton" parent="."]
@@ -62,3 +77,98 @@ texture_normal = ExtResource("3_fn2rx")
 texture_pressed = ExtResource("4_fn2rx")
 texture_hover = ExtResource("5_j4tmi")
 stretch_mode = 4
+
+[node name="OptionsPopup" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="Dimmer" type="ColorRect" parent="OptionsPopup"]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 0.47058824)
+
+[node name="PanelTablero" type="TextureRect" parent="OptionsPopup"]
+layout_mode = 0
+offset_left = 706.0
+offset_top = 309.0
+offset_right = 1236.0
+offset_bottom = 803.0
+texture = ExtResource("9_5aw1p")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PanelMarco" type="TextureRect" parent="OptionsPopup"]
+layout_mode = 0
+offset_left = 690.0
+offset_top = 297.0
+offset_right = 1246.0
+offset_bottom = 822.0
+texture = ExtResource("21_r1exu")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="IconMusic" type="TextureRect" parent="OptionsPopup"]
+layout_mode = 0
+offset_left = 797.0
+offset_top = 348.0
+offset_right = 929.0
+offset_bottom = 485.0
+texture = ExtResource("10_tkdi7")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="IconSfx" type="TextureRect" parent="OptionsPopup"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.069000006
+anchor_bottom = 0.21200001
+offset_left = 995.0
+offset_top = 364.0
+offset_right = 1018.52
+offset_bottom = 250.04
+texture = ExtResource("11_t6b13")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="BtnSfx" type="TextureButton" parent="OptionsPopup"]
+layout_mode = 0
+offset_left = 800.0
+offset_top = 608.0
+offset_right = 1131.0
+offset_bottom = 691.0
+texture_normal = ExtResource("12_q5hfb")
+texture_pressed = ExtResource("13_lvf8r")
+texture_hover = ExtResource("14_5do2b")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="BtnMusic" type="TextureButton" parent="OptionsPopup"]
+layout_mode = 0
+offset_left = 796.0
+offset_top = 528.0
+offset_right = 1140.0
+offset_bottom = 609.0
+texture_normal = ExtResource("15_u4mrs")
+texture_pressed = ExtResource("16_v6unh")
+texture_hover = ExtResource("17_vwxxi")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="BtnSalir" type="TextureButton" parent="OptionsPopup"]
+layout_mode = 0
+offset_left = 830.0
+offset_top = 698.0
+offset_right = 1097.0
+offset_bottom = 753.0
+texture_normal = ExtResource("18_tgusl")
+texture_pressed = ExtResource("19_cym8w")
+texture_hover = ExtResource("20_yltpr")
+ignore_texture_size = true
+stretch_mode = 5
+
+[connection signal="pressed" from="BtnAjustes" to="." method="_on_ajustes_pressed"]
+[connection signal="pressed" from="OptionsPopup/BtnSfx" to="." method="_on_toggle_sfx"]
+[connection signal="pressed" from="OptionsPopup/BtnMusic" to="." method="_on_toggle_music"]
+[connection signal="pressed" from="OptionsPopup/BtnSalir" to="." method="_on_close_options"]
